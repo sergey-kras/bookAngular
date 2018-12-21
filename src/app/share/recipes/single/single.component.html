@@ -1,0 +1,18 @@
+<div class="recipe">
+  <div class="recipe__title">
+    {{recipe.title}}
+  </div>
+  <div class="recipe__comment">
+    {{recipe.comment}}
+  </div>
+  <div *ngIf="keys" class="recipe__keys">
+    <div *ngFor='let key of keys, let i = index' class="recipe__key">
+      <div class="recipe__smallKey">
+        {{key}}:
+      </div>
+      <div class="recipe__smallValue">
+        {{names[i]}}
+      </div>
+    </div>
+  </div>
+</div>

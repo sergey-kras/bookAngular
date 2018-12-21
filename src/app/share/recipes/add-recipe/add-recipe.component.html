@@ -1,0 +1,16 @@
+<form [formGroup]="form" (ngSubmit)="onAddRecipe()" style="margin-bottom:15px;">
+  <mat-form-field style="width: 100%;">
+    <input matInput placeholder="Заголовок" formControlName="title">
+    <mat-error *ngIf="form.get('title').invalid && form.get('title').touched">
+      Имя не может быть пустым
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field style="width: 100%;">
+    <textarea matInput placeholder="Описание" formControlName="comment"></textarea>
+    <mat-error *ngIf="form.get('comment').invalid && form.get('comment').touched">
+      Описание не может быть пустым
+    </mat-error>
+  </mat-form-field>
+  <button mat-button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Добавить рецепт</button>
+
+</form>

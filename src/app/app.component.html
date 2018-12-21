@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button type="button" mat-button (click)="drawer.toggle()">
+            Toggle sidenav
+          </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+<mat-drawer-container class="example-container" autosize style="height: 100vh;">
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <p>Auto-resizing sidenav</p>
+      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        Toggle extra text
+      </button>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <app-recipes></app-recipes>
+    </div>
+  
+  </mat-drawer-container>
