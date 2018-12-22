@@ -20,12 +20,12 @@ export class RecipesComponent implements OnInit {
       return response.json();
     }))
       .subscribe(response => {
-        this.recipes = response;
+        this.recipes = response.reverse();
       });
   }
 
   AddRecipe(recipe) {
-    this.recipes.push(recipe);
+    this.recipes.unshift(recipe);
   }
 
   DeleteRecipe(id) {
