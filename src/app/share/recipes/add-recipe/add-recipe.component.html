@@ -11,6 +11,12 @@
       Описание не может быть пустым
     </mat-error>
   </mat-form-field>
+  <mat-form-field style="width: 100%;">
+    <textarea matInput placeholder="Ингредиенты по типу Ключ:значение \n" formControlName="ingred"></textarea>
+    <mat-error *ngIf="form.get('ingred').invalid && form.get('ingred').touched">
+      Описание не может быть пустым
+    </mat-error>
+  </mat-form-field>
   <button mat-button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Добавить рецепт</button>
 
 </form>
