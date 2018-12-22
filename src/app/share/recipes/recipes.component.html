@@ -1,6 +1,6 @@
 <mat-card style="width: 500px; margin:0 auto;margin-top:15px;">
   <app-add-recipe (recipe)="AddRecipe($event)"></app-add-recipe>
   <div *ngFor="let recipe of recipes, index as i">
-    <app-single [recipe]="recipe"></app-single>
+    <app-single [recipe]="recipe" (deleteRec)="DeleteRecipe($event)"></app-single>
   </div>
 </mat-card>

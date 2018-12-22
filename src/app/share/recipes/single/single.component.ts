@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-single',
@@ -9,6 +9,7 @@ export class SingleComponent implements OnInit {
 
   constructor() { }
   @Input() recipe;
+  @Output() deleteRec = new EventEmitter<number>();
   keys;
   names;
   ngOnInit() {
@@ -18,6 +19,10 @@ export class SingleComponent implements OnInit {
         return this.recipe.ingridients[0][item];
       });
     }
+  }
+
+  delete() {
+    this.deleteRec.emit(this.recipe.id);
   }
 
 }

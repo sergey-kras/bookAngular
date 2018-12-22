@@ -1,6 +1,7 @@
 .recipe{
     margin-bottom: 15px;
     padding-bottom: 10px;
+    position: relative;
     border-bottom: 1px solid #000;
     &__title{
         font-size: 20px;
@@ -24,5 +25,12 @@
     }
     &__smallValue{
         width: 40%;
+    }
+    .delete{
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: red;
+        cursor: pointer;
     }
 }

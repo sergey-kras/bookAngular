@@ -27,4 +27,14 @@ export class RecipesComponent implements OnInit {
   AddRecipe(recipe) {
     this.recipes.push(recipe);
   }
+
+  DeleteRecipe(id) {
+    console.log(id);
+    this.recipes.map((recipe, index) => {
+      if (recipe.id === id) {
+        this.recipes.splice(index, 1);
+        this.http.delete(`http://localhost:3000/recipes/${recipe.id}`).subscribe();
+      }
+    });
+  }
 }
